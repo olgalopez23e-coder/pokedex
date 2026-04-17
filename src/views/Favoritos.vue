@@ -2,6 +2,7 @@
   <div class="favoritos-view">
     <header class="view-header" style="margin-bottom: 2rem;">
       <h1 style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">Mis Favoritos</h1>
+<<<<<<< HEAD
       <p style="color: var(--color-text-muted);">Pokémon que has marcado como preferidos.</p>
     </header>
 
@@ -14,6 +15,20 @@
       <span style="font-size: 4rem;">⭐</span>
       <h2 style="margin-top: 1rem; color: var(--color-text);">Aún no tienes favoritos</h2>
       <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Explora la Pokédex y marca los que más te gusten.</p>
+=======
+      <p style="color: #666;">Pokémon que has marcado como preferidos.</p>
+    </header>
+
+    <div v-if="loading" style="text-align: center; padding: 3rem;">
+      <div class="loader" style="width: 50px; height: 50px; border: 5px solid #eee; border-top: 5px solid var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite; margin: auto;"></div>
+      <p style="margin-top: 1rem;">Cargando tus favoritos...</p>
+    </div>
+
+    <div v-else-if="favoritos.length === 0" style="text-align: center; padding: 5rem; background: white; border-radius: 20px; box-shadow: var(--shadow);">
+      <span style="font-size: 4rem;">⭐</span>
+      <h2 style="margin-top: 1rem;">Aún no tienes favoritos</h2>
+      <p style="color: #666; margin-bottom: 2rem;">Explora la Pokédex y marca los que más te gusten.</p>
+>>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
       <router-link to="/" class="nav-link" style="background: var(--color-primary); display: inline-block;">Explorar Pokédex</router-link>
     </div>
 

@@ -1,20 +1,37 @@
 <template>
+<<<<<<< HEAD
   <div class="auth-view" style="max-width: 420px; margin: 4rem auto; padding: 2rem; background: linear-gradient(170deg, #161d2d 0%, #111827 100%); border-radius: 20px; box-shadow: var(--shadow); border: 1px solid var(--color-border);">
     <h1 style="text-align: center; color: #ff4d5e; margin-bottom: 2rem; text-shadow: 0 0 16px rgba(225,29,47,0.25);">Unirse a PokéPWA</h1>
     
     <form @submit.prevent="handleRegister" style="display: flex; flex-direction: column; gap: 1.5rem;">
       <div class="form-group">
         <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--color-text);">Email</label>
+=======
+  <div class="auth-view" style="max-width: 400px; margin: 4rem auto; padding: 2rem; background: white; border-radius: 20px; box-shadow: var(--shadow);">
+    <h1 style="text-align: center; color: var(--color-primary); margin-bottom: 2rem;">Unirse a PokéPWA</h1>
+    
+    <form @submit.prevent="handleRegister" style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <div class="form-group">
+        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email</label>
+>>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
         <input v-model="email" type="email" placeholder="entrenador@pokemon.com" required class="filter-input" style="width: 100%;" />
       </div>
       
       <div class="form-group">
+<<<<<<< HEAD
         <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--color-text);">Contraseña</label>
+=======
+        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Contraseña</label>
+>>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
         <input v-model="password" type="password" placeholder="Mínimo 6 caracteres" required class="filter-input" style="width: 100%;" />
       </div>
 
       <div class="form-group">
+<<<<<<< HEAD
         <label style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: var(--color-text);">Confirmar Contraseña</label>
+=======
+        <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Confirmar Contraseña</label>
+>>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
         <input v-model="confirmPassword" type="password" placeholder="••••••••" required class="filter-input" style="width: 100%;" />
       </div>
 
@@ -24,7 +41,11 @@
         {{ loading ? 'Creando cuenta...' : 'Crear Cuenta' }}
       </button>
 
+<<<<<<< HEAD
       <p style="text-align: center; color: var(--color-text-muted); font-size: 0.9rem;">
+=======
+      <p style="text-align: center; color: #666; font-size: 0.9rem;">
+>>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
         ¿Ya tienes cuenta? <router-link to="/login" style="color: var(--color-primary); text-decoration: none;">Inicia sesión</router-link>
       </p>
     </form>

@@ -6,7 +6,7 @@
       @click.stop="$emit('toggle-favorite', pokemon)"
       :title="isFavorite ? 'Quitar de favoritos' : 'Añadir a favoritos'"
     >
-      {{ isFavorite ? '❤️' : '🤍' }}
+      {{ isFavorite ? '❤️' : '⭐' }}
     </button>
 
     <img :src="pokemon.image || defaultImage" :alt="pokemon.name" class="pokemon-image" />
@@ -26,7 +26,11 @@
       <router-link 
         :to="`/pokemon/${pokemon.id || pokemon.name}`" 
         class="nav-link" 
+<<<<<<< HEAD
         style="color: #ffd6dc; font-size: 0.8rem; padding: 0.3rem 0.8rem; border: 1px solid var(--color-primary); border-radius: 20px; background: rgba(225,29,47,0.12);"
+=======
+        style="color: var(--color-primary); font-size: 0.8rem; padding: 0.3rem 0.8rem; border: 1px solid var(--color-primary); border-radius: 20px;"
+>>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
         @click.stop
       >
         Ver detalles
@@ -61,8 +65,13 @@ const defaultImage = computed(() => {
   position: absolute;
   top: 10px;
   right: 10px;
+<<<<<<< HEAD
   background: #0f1422;
   border: 1px solid #2f3a52;
+=======
+  background: white;
+  border: none;
+>>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -78,7 +87,11 @@ const defaultImage = computed(() => {
 
 .fav-badge:hover {
   transform: scale(1.1);
+<<<<<<< HEAD
   box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+=======
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+>>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
 }
 
 .pokemon-card {
