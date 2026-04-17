@@ -1,32 +1,19 @@
 <template>
   <div class="home-view">
     <header class="view-header" style="margin-bottom: 2rem;">
-<<<<<<< HEAD
       <h1 style="font-size: 2.3rem; color: #ff4d5e; margin-bottom: 0.8rem; text-shadow: 0 0 18px rgba(225,29,47,0.25);">Explorar Pokédex</h1>
       <p style="color: var(--color-text-muted);">Encuentra y colecciona todos tus Pokémon favoritos.</p>
     </header>
 
     <!-- Dashboard de Filtros -->
     <section class="filters" style="background: linear-gradient(170deg, #161d2d 0%, #111827 100%); border: 1px solid var(--color-border); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 3rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-=======
-      <h1 style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">Explorar Pokédex</h1>
-      <p style="color: #666;">Encuentra y colecciona todos tus Pokémon favoritos.</p>
-    </header>
-
-    <!-- Dashboard de Filtros -->
-    <section class="filters" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: var(--shadow); margin-bottom: 3rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
       <div style="flex: 2; display: flex; gap: 0.5rem; min-width: 300px;">
         <input 
           v-model="filters.name" 
           type="text" 
           placeholder="Ej: 'pika', 'char', '1'..." 
           class="filter-input"
-<<<<<<< HEAD
           style="flex: 1; border-radius: 12px; padding: 0.8rem 1.2rem; border: 2px solid #2f3a52; outline: none; transition: border-color 0.3s;"
-=======
-          style="flex: 1; border-radius: 12px; padding: 0.8rem 1.2rem; border: 2px solid #eee; outline: none; transition: border-color 0.3s;"
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
           @keyup.enter="handleSearch"
         />
         <button 
@@ -40,20 +27,12 @@
       </div>
       
       <div style="flex: 1; display: flex; gap: 1rem; min-width: 300px;">
-<<<<<<< HEAD
         <select v-model="filters.type" class="filter-select" style="flex: 1; padding: 0.8rem; border-radius: 12px; border: 2px solid #2f3a52;" @change="handleSearch">
-=======
-        <select v-model="filters.type" class="filter-select" style="flex: 1; padding: 0.8rem; border-radius: 12px; border: 2px solid #eee;" @change="handleSearch">
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
           <option value="">Todos los Tipos</option>
           <option v-for="type in types" :key="type" :value="type">{{ type }}</option>
         </select>
 
-<<<<<<< HEAD
         <select v-model="filters.region" class="filter-select" style="flex: 1; padding: 0.8rem; border-radius: 12px; border: 2px solid #2f3a52;" @change="handleSearch">
-=======
-        <select v-model="filters.region" class="filter-select" style="flex: 1; padding: 0.8rem; border-radius: 12px; border: 2px solid #eee;" @change="handleSearch">
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
           <option value="">Todas las Regiones</option>
           <option v-for="region in regions" :key="region" :value="region">{{ region }}</option>
         </select>
@@ -62,7 +41,6 @@
 
     <!-- Grid de Resultados -->
     <div v-if="loading" style="text-align: center; padding: 5rem;">
-<<<<<<< HEAD
       <div class="loader" style="width: 60px; height: 60px; border: 6px solid #2a344b; border-top: 6px solid var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite; margin: auto;"></div>
       <p style="margin-top: 1.5rem; font-size: 1.2rem; color: var(--color-text-muted);">Buscando en la Pokédex...</p>
     </div>
@@ -71,25 +49,11 @@
       <span style="font-size: 4rem;">🚫</span>
       <h2 style="margin-top: 1rem; color: #f2f5ff;">No se encontraron resultados</h2>
       <p style="color: var(--color-text-muted);">Intenta con otros términos o filtros.</p>
-=======
-      <div class="loader" style="width: 60px; height: 60px; border: 6px solid #eee; border-top: 6px solid var(--color-primary); border-radius: 50%; animation: spin 1s linear infinite; margin: auto;"></div>
-      <p style="margin-top: 1.5rem; font-size: 1.2rem; color: #666;">Buscando en la Pokédex...</p>
-    </div>
-
-    <div v-else-if="pokemons.length === 0" style="text-align: center; padding: 5rem; background: white; border-radius: 20px;">
-      <span style="font-size: 4rem;">🚫</span>
-      <h2 style="margin-top: 1rem; color: #444;">No se encontraron resultados</h2>
-      <p style="color: #666;">Intenta con otros términos o filtros.</p>
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
       <button @click="resetFilters" style="margin-top: 1.5rem; color: var(--color-primary); background: none; border: 2px solid var(--color-primary); padding: 0.8rem 1.5rem; border-radius: 12px; cursor: pointer; font-weight: bold;">Ver todos los Pokémon</button>
     </div>
 
     <div v-else>
-<<<<<<< HEAD
       <div style="margin-bottom: 1.5rem; color: var(--color-text-muted); font-size: 0.9rem;">
-=======
-      <div style="margin-bottom: 1.5rem; color: #666; font-size: 0.9rem;">
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
         Mostrando {{ pokemons.length }} Pokémon 
         <span v-if="totalResults > 0">(Total encontrados: {{ totalResults }})</span>
       </div>
@@ -118,11 +82,7 @@
         Anterior
       </button>
       
-<<<<<<< HEAD
       <span style="font-weight: bold; color: var(--color-text-muted);">{{ Math.floor(offset/20) + 1 }} / {{ Math.ceil(totalResults/20) }}</span>
-=======
-      <span style="font-weight: bold; color: #666;">{{ Math.floor(offset/20) + 1 }} / {{ Math.ceil(totalResults/20) }}</span>
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
 
       <button 
         :disabled="offset + 20 >= totalResults"

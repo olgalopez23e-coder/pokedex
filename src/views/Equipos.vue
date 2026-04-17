@@ -2,16 +2,11 @@
   <div class="equipos-view">
     <header class="view-header" style="margin-bottom: 2rem;">
       <h1 style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 0.5rem;">Mis Equipos</h1>
-<<<<<<< HEAD
       <p style="color: var(--color-text-muted);">Crea equipos estratégicos de hasta 6 Pokémon.</p>
-=======
-      <p style="color: #666;">Crea equipos estratégicos de hasta 6 Pokémon.</p>
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
     </header>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
       <!-- Constructor de Equipo -->
-<<<<<<< HEAD
       <section class="team-builder" style="background: linear-gradient(170deg, #161d2d 0%, #111827 100%); border: 1px solid var(--color-border); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow);">
         <h2 style="margin-bottom: 1.5rem; color: var(--color-text); border-bottom: 2px solid #2a344b; padding-bottom: 0.5rem;">Nuevo Equipo</h2>
         
@@ -28,24 +23,6 @@
               <button @click="removeFromTeam(poke)" style="position: absolute; -top: 5px; -right: 5px; background: var(--color-primary); color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;">×</button>
             </div>
             <div v-if="selectedPokemons.length === 0" style="color: var(--color-text-muted); margin: auto;">Selecciona de tus favoritos</div>
-=======
-      <section class="team-builder" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: var(--shadow);">
-        <h2 style="margin-bottom: 1.5rem; color: var(--color-accent); border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">Nuevo Equipo</h2>
-        
-        <div style="margin-bottom: 1.5rem;">
-          <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Nombre del Equipo</label>
-          <input v-model="newTeamName" type="text" placeholder="Ej: Equipo Maestro" class="filter-input" style="width: 100%; border: 1px solid #ddd;" />
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-          <label style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Pokémon Seleccionados ({{ selectedPokemons.length }}/6)</label>
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; min-height: 100px; border: 2px dashed #eee; border-radius: 12px; padding: 1rem;">
-            <div v-for="poke in selectedPokemons" :key="poke.id" style="position: relative; width: 60px; height: 60px; background: #f9f9f9; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd;">
-              <img :src="poke.image" style="width: 50px; height: 50px;" />
-              <button @click="removeFromTeam(poke)" style="position: absolute; -top: 5px; -right: 5px; background: var(--color-primary); color: white; border: none; border-radius: 50%; width: 22px; height: 22px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold;">×</button>
-            </div>
-            <div v-if="selectedPokemons.length === 0" style="color: #ccc; margin: auto;">Selecciona de tus favoritos</div>
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
           </div>
         </div>
 
@@ -56,33 +33,20 @@
 
       <!-- Lista de Favoritos para Seleccionar -->
       <section class="favorites-selection">
-<<<<<<< HEAD
         <h2 style="margin-bottom: 1.5rem; color: var(--color-text);">Tus Favoritos</h2>
         <div v-if="favoritos.length === 0" style="text-align: center; padding: 3rem; background: #121928; border: 1px solid #2a344b; border-radius: 20px; color: var(--color-text-muted);">
-=======
-        <h2 style="margin-bottom: 1.5rem; color: var(--color-accent);">Tus Favoritos</h2>
-        <div v-if="favoritos.length === 0" style="text-align: center; padding: 3rem; background: rgba(255,255,255,0.5); border-radius: 20px;">
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
           <p>No tienes favoritos para agregar.</p>
           <router-link to="/" style="color: var(--color-primary);">Ir a explorar</router-link>
         </div>
         <div v-else style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 1rem; max-height: 600px; overflow-y: auto; padding-right: 0.5rem;">
           <div v-for="poke in favoritos" :key="poke.pokemonId" @click="addToTeam(poke)" 
                :class="{ 'already-selected': isSelected(poke.pokemonId) }" 
-<<<<<<< HEAD
                style="background: #121928; border: 1px solid #2a344b; border-radius: 15px; padding: 1rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.25); cursor: pointer; transition: all 0.2s;"
-=======
-               style="background: white; border-radius: 15px; padding: 1rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.2s;"
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
                onmouseover="this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';" 
                onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';"
                :style="{ opacity: isSelected(poke.pokemonId) ? 0.4 : 1, pointerEvents: isSelected(poke.pokemonId) || selectedPokemons.length >= 6 ? 'none' : 'auto' }">
             <img :src="poke.pokemonData?.image" style="width: 70px; height: 70px;" />
-<<<<<<< HEAD
             <div style="text-transform: capitalize; font-weight: bold; font-size: 0.9rem; color: var(--color-text);">{{ poke.pokemonName }}</div>
-=======
-            <div style="text-transform: capitalize; font-weight: bold; font-size: 0.9rem;">{{ poke.pokemonName }}</div>
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
           </div>
         </div>
       </section>
@@ -90,7 +54,6 @@
 
     <!-- Mis Equipos Guardados -->
     <section class="saved-teams" style="margin-top: 4rem;">
-<<<<<<< HEAD
       <h2 style="margin-bottom: 1.5rem; color: var(--color-text);">Mis Equipos Guardados</h2>
       <div v-if="teams.length === 0" style="padding: 2rem; background: #121928; border: 1px solid #2a344b; border-radius: 20px; text-align: center; color: var(--color-text-muted);">
         Todavía no has creado ningún equipo.
@@ -103,20 +66,6 @@
           </div>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
             <div v-for="poke in team.pokemons" :key="poke.pokemonId" style="width: 45px; height: 45px; background: #0f1422; border: 1px solid #2f3a52; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-=======
-      <h2 style="margin-bottom: 1.5rem; color: var(--color-accent);">Mis Equipos Guardados</h2>
-      <div v-if="teams.length === 0" style="padding: 2rem; background: rgba(0,0,0,0.02); border-radius: 20px; text-align: center; color: #666;">
-        Todavía no has creado ningún equipo.
-      </div>
-      <div v-else style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
-        <div v-for="team in teams" :key="team._id" style="background: white; border-radius: 20px; padding: 1.5rem; box-shadow: var(--shadow); border-top: 8px solid var(--color-primary);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-            <h3 style="text-transform: capitalize;">{{ team.name }}</h3>
-            <button @click="deleteTeam(team._id)" style="background: none; border: none; color: #999; cursor: pointer;">🗑️</button>
-          </div>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            <div v-for="poke in team.pokemons" :key="poke.pokemonId" style="width: 45px; height: 45px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
->>>>>>> 5ac1609e264fd44ad0d1ccdf2f3ad0075d804495
               <img :src="poke.image" style="width: 40px; height: 40px;" :title="poke.name" />
             </div>
           </div>
